@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Love Story ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: pink;
+    font-size: 20px;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 2.8em;
+}
+
+.section {
+    margin: 25px;
+    padding: 25px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+img, video {
+    width: 250px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #ff4d6d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ffe0e6;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy 6 Months ❤️</h1>
+<p>You are my favorite person forever 💕</p>
+
+<div class="section">
+    <h2>Our Memories 📸</h2>
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <video controls src="video1.mp4"></video>
+</div>
+
+<div class="section">
+    <h2>💘 Do You Love Me?</h2>
+    <button onclick="yesClick()">Yes 💖</button>
+    <button onclick="noClick()">No 😜</button>
+    <p id="loveAnswer"></p>
+</div>
+
+<div class="section">
+    <h2>💌 Secret Message</h2>
+    <button onclick="showMessage()">Open</button>
+    <p id="secretMsg"></p>
+</div>
+
+<div class="section">
+    <h2>🎁 Final Surprise</h2>
+    <button onclick="finalSurprise()">Click Me</button>
+    <p id="finalMsg"></p>
+</div>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function yesClick() {
+    document.getElementById("loveAnswer").innerText =
+    "I knew it 😍 I love you more than anything 💖";
+}
+
+function noClick() {
+    document.getElementById("loveAnswer").innerText =
+    "Impossible 😜 You definitely love me ❤️";
+}
+
+function showMessage() {
+    document.getElementById("secretMsg").innerText =
+    "These 6 months with you have been magical. You make my world brighter every day 💕";
+}
+
+function finalSurprise() {
+    document.getElementById("finalMsg").innerText =
+    "No matter what happens, I’ll always choose you ❤️";
+}
+
+/* Floating hearts generator */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
